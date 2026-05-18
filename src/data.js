@@ -7,18 +7,18 @@ export const storeData = {
   contacts: [
     { 
       name: "Armando", 
-      phone: "5493764000000", 
-      displayPhone: "3764 00-0000" 
+      phone: "5493764825043", 
+      displayPhone: "3764 82-5043" 
     },
     { 
-      name: "Camarada 1", 
-      phone: "5493764111111", 
-      displayPhone: "3764 11-1111" 
+      name: "Santiago", 
+      phone: "5493764080848", 
+      displayPhone: "3764 08-0848" 
     },
     { 
-      name: "Camarada 2", 
-      phone: "5493764222222", 
-      displayPhone: "3764 22-2222" 
+      name: "Ramiro", 
+      phone: "5493764033629", 
+      displayPhone: "3764 03-3629" 
     }
   ]
 };
