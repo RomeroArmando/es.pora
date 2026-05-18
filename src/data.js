@@ -1,6 +1,6 @@
 export const storeData = {
   // Cuando se queden sin cosecha, simplemente cambian este 'true' por 'false'
-  hasStock: false, 
+  hasStock: true, 
   
   // Agreguen sus números con el código de país y área (sin el + ni espacios)
   // El 549 es de Argentina, seguido del código de área (ej. 376) y el número
