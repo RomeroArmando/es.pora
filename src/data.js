@@ -18,7 +18,7 @@ export const storeData = {
     { 
       name: "Ramiro", 
       phone: "5493764033629", 
-      displayPhone: "3764 03-3629" 
+      displayPhone: "3795 03-3629" 
     }
   ]
 };
