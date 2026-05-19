@@ -22,8 +22,8 @@ export const storeData = {
     },
     { 
       name: "Santiago", 
-      phone: "5493764080848", 
-      displayPhone: "3764 08-0848" 
+      phone: "5493765080848", 
+      displayPhone: "3765 08-0848" 
     }
   ]
 };
