@@ -1,8 +1,6 @@
-// Variables de color EXTRAÍDAS DEL LOGO
-$bg-color: #E5E2D9;    // El tono crema de fondo de tu imagen
-$olive-dark: #545F3C;  // El color oliva oscuro de los hongos y letras
-
-// Colores de estado (ligeramente ajustados para combinar con la paleta oliva)
+// Variables
+$bg-color: #E5E2D9;    
+$olive-dark: #545F3C;  
 $color-stock-yes: #4caf50; 
 $color-stock-no: #e53935; 
 
@@ -13,44 +11,58 @@ $color-stock-no: #e53935;
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; // Usamos sans-serif limpias
-  background-color: $bg-color; // Fondo crema en toda la pantalla
-  color: $olive-dark; // Todo el texto por defecto es oliva oscuro
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: $bg-color; 
+  color: $olive-dark; 
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .container {
   width: 100%;
-  max-width: 450px;
-  // Eliminamos el fondo blanco y las sombras para un look plano y orgánico
-  padding: 1rem 1.5rem 3rem;
-  text-align: center;
+  // Aumentamos el ancho máximo para que entren cómodas las dos columnas en PC
+  max-width: 900px; 
 }
 
-.header {
-  margin-bottom: 2rem;
+.layout-grid {
+  display: flex;
+  // En celulares, ponemos la presentación (logo) arriba y la info abajo
+  flex-direction: column-reverse; 
+  gap: 3rem;
+  align-items: center;
 
-  .brand-logo {
-    // Controlamos el tamaño del logo para que no sea gigante en la pantalla
-    max-width: 250px; 
-    height: auto;
-    display: block;
-    margin: 0 auto; // Centrado horizontal
+  // Cuando la pantalla es más ancha (Tablets horizontales y PC)
+  @media (min-width: 768px) {
+    flex-direction: row; // Las pone una al lado de la otra
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
   }
 }
 
+// Estilos de la Columna Izquierda (Info)
+.column-info {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
 .status-section {
-  margin-bottom: 3rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left; // Alineamos a la izquierda en PC
+  }
 
   h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    color: $olive-dark; // Texto oliva
   }
 
   .status-badge {
@@ -59,13 +71,13 @@ body {
     font-size: 1.5rem;
     font-weight: 800;
     border-radius: 8px;
-    color: white; // Texto blanco para que resalte en el badge
+    color: white; 
     letter-spacing: 0.5px;
     width: 100%;
+    text-align: center;
 
     &.in-stock {
       background-color: $color-stock-yes;
-      // Una sombra muy sutil solo en el badge
       box-shadow: 0 4px 12px rgba($color-stock-yes, 0.2);
     }
 
@@ -77,19 +89,17 @@ body {
 }
 
 .contact-section {
-  // Una línea muy fina para separar secciones
   border-top: 1px solid rgba($olive-dark, 0.1); 
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 
   h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: $olive-dark;
   }
 
   p {
     font-size: 0.9rem;
-    color: rgba($olive-dark, 0.7); // Un oliva un poco más transparente
+    color: rgba($olive-dark, 0.7); 
     margin-bottom: 1.5rem;
   }
 
@@ -102,16 +112,14 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      // Usamos un oliva ultra transparente de fondo para los contactos
       background-color: rgba($olive-dark, 0.05); 
       padding: 1rem;
       border-radius: 8px;
       text-decoration: none;
-      color: $olive-dark; // Texto oliva
+      color: $olive-dark; 
       transition: background-color 0.2s, transform 0.1s;
 
       &:hover, &:active {
-        // En hover oscurecemos un poco el fondo
         background-color: rgba($olive-dark, 0.1); 
         transform: scale(1.02);
       }
@@ -124,6 +132,57 @@ body {
         font-weight: 500;
         font-size: 0.9rem;
       }
+    }
+  }
+}
+
+// Estilos de la Columna Derecha (Presentación)
+.column-presentation {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    border-left: 1px solid rgba($olive-dark, 0.1);
+    padding-left: 3rem;
+  }
+
+  .brand-logo {
+    max-width: 260px; 
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-us {
+    margin-bottom: 2rem;
+    
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: rgba($olive-dark, 0.85);
+    }
+  }
+
+  .instagram-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid $olive-dark;
+    border-radius: 50px; // Botón redondeado
+    color: $olive-dark;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+
+    strong {
+      margin-left: 0.3rem;
+    }
+
+    &:hover {
+      background-color: $olive-dark;
+      color: $bg-color; // Invierte los colores en hover
     }
   }
 }

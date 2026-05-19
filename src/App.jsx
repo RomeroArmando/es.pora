@@ -2,47 +2,64 @@ import { storeData } from './data';
 import './App.scss';
 
 function App() {
-  const { hasStock, contacts } = storeData;
+  const { hasStock, contacts, description, instagramHandle, instagramUrl } = storeData;
 
   return (
     <div className="container">
-      <header className="header">
-        {/* Aquí cargamos tu logo directamente. El 'alt' es por accesibilidad */}
-        <img 
-          src="/logo.png" 
-          alt="Es.porã - Venta de Hongos Comestibles" 
-          className="brand-logo" 
-        />
-      </header>
+      <main className="layout-grid">
+        
+        {/* COLUMNA IZQUIERDA (Info y Contactos) */}
+        <section className="column-info">
+          <div className="status-section">
+            <h2>Estado del stock:</h2>
+            <div className={`status-badge ${hasStock ? 'in-stock' : 'out-of-stock'}`}>
+              {hasStock ? '¡TENEMOS STOCK!' : 'SIN STOCK ACTUALMENTE'}
+            </div>
+          </div>
 
-      <main>
-        <section className="status-section">
-          <h2>Estado del stock:</h2>
-          {/* El estado dinámico sigue igual */}
-          <div className={`status-badge ${hasStock ? 'in-stock' : 'out-of-stock'}`}>
-            {hasStock ? '¡TENEMOS STOCK!' : 'SIN STOCK ACTUALMENTE'}
+          <div className="contact-section">
+            <h3>Comunicate con nosotros</h3>
+            <p>Hacé clic en un número para abrir WhatsApp:</p>
+            
+            <div className="contact-list">
+              {contacts.map((contact, index) => (
+                <a 
+                  key={index}
+                  href={`https://wa.me/${contact.phone}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-card"
+                >
+                  <span className="contact-name">{contact.name}</span>
+                  <span className="contact-number">{contact.displayPhone}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="contact-section">
-          <h3>Comunicate con nosotros</h3>
-          <p>Hacé clic en un número para abrir WhatsApp:</p>
+        {/* COLUMNA DERECHA (Presentación) */}
+        <section className="column-presentation">
+          <img 
+            src="/logo.png" 
+            alt="Es.porã - Venta de Hongos Comestibles" 
+            className="brand-logo" 
+          />
           
-          <div className="contact-list">
-            {contacts.map((contact, index) => (
-              <a 
-                key={index}
-                href={`https://wa.me/${contact.phone}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-card"
-              >
-                <span className="contact-name">{contact.name}</span>
-                <span className="contact-number">{contact.displayPhone}</span>
-              </a>
-            ))}
+          <div className="about-us">
+            <p>{description}</p>
           </div>
+
+          <a 
+            href={instagramUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="instagram-btn"
+          >
+            Seguinos en Instagram <strong>{instagramHandle}</strong>
+          </a>
         </section>
+
       </main>
     </div>
   );
