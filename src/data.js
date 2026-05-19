@@ -1,6 +1,7 @@
 export const storeData = {
   // Cuando se queden sin cosecha, simplemente cambian este 'true' por 'false'
-  hasStock: true, 
+  //hasStock: true, 
+  hasStock: false, 
   
   // Agreguen sus números con el código de país y área (sin el + ni espacios)
   // El 549 es de Argentina, seguido del código de área (ej. 376) y el número
@@ -17,7 +18,7 @@ export const storeData = {
     },
     { 
       name: "Ramiro", 
-      phone: "5493764033629", 
+      phone: "5493795033629", 
       displayPhone: "3795 03-3629" 
     }
   ]
