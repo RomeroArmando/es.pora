@@ -5,7 +5,7 @@ export const storeData = {
 
   // Textos de presentación
   description: "¿Quienes somos? Es.porã es una start up científica misionera, con el objetivo de nutrir a la ciudad con una gran variedad de hongos.🍄‍🟫 ✨Deseamos aportar una diversidad de ingredientes traidos directamente desde suelo misionero a tu mesa asegurando calidad para tu paladar y bolsillo. Tambien, esperamos acompañar a productores locales con cepas y herramientas que potencien sus emprendimientos, haciendo a Misiones más grande. 💪🤝",
-  instagramHandle: "@es.pora", // Cómo se ve en texto
+  instagramHandle: "@es.pora.misiones", // Cómo se ve en texto
   instagramUrl: "https://www.instagram.com/es.pora.misiones/", // El link real
   
   // Contactos
