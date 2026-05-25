@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container">
       <main className="layout-grid">
-        
+
         {/* COLUMNA IZQUIERDA (Info y Contactos) */}
         <section className="column-info">
           <div className="status-section">
@@ -20,13 +20,13 @@ function App() {
           <div className="contact-section">
             <h3>Comunicate con nosotros</h3>
             <p>Hacé clic en un número para abrir WhatsApp:</p>
-            
+
             <div className="contact-list">
               {contacts.map((contact, index) => (
-                <a 
+                <a
                   key={index}
-                  href={`https://wa.me/${contact.phone}`} 
-                  target="_blank" 
+                  href={`https://wa.me/${contact.phone}`}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="contact-card"
                 >
@@ -40,20 +40,20 @@ function App() {
 
         {/* COLUMNA DERECHA (Presentación) */}
         <section className="column-presentation">
-          <img 
-            src="/logo.png" 
-            alt="Es.porã - Venta de Hongos Comestibles" 
-            className="brand-logo" 
+          <img
+            src="/logo.png"
+            alt="Es.porã - Venta de Hongos Comestibles"
+            className="brand-logo"
           />
-          
+
           <div className="about-us">
             <p>{description}</p>
           </div>
 
-          <a 
-            href={instagramUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="instagram-btn"
           >
             Seguinos en Instagram <strong>{instagramHandle}</strong>
@@ -61,6 +61,25 @@ function App() {
         </section>
 
       </main>
+
+      <footer className="dev-footer">
+        <div className="footer-content">
+          <p>Powered by</p>
+          <a
+            href="https://www.instagram.com/work.progress1/" // <-- Colocá acá el link real a tu perfil de WIP
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wip-link"
+          >
+            <img
+              src="/wip_logo.png"
+              alt="WIP Development"
+              className="wip-signature-img"
+            />
+          </a>
+        </div>
+      </footer>
+
     </div>
   );
 }

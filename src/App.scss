@@ -186,3 +186,133 @@ body {
     }
   }
 }
+
+// ... (todo el SCSS anterior)
+
+// Estilos del Footer WIP
+.dev-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba($olive-dark, 0.15); // Una línea muy sutil
+  
+  p {
+    font-size: 0.8rem;
+    color: rgba($olive-dark, 0.6); // Texto semi-transparente para que no compita con la info
+    letter-spacing: 0.5px;
+  }
+
+  .wip-signature {
+    font-weight: 800;
+    color: rgba($olive-dark, 0.8);
+    transition: all 0.4s ease;
+    cursor: default;
+
+    // Aquí está la magia: el hover que revela los colores de tu logo
+    &:hover {
+      background: linear-gradient(90deg, #00d2ff 0%, #ff007f 50%, #ffcc00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 2px 10px rgba(#ff007f, 0.3);
+      transform: scale(1.05);
+      display: inline-block;
+    }
+  }
+}
+
+// ... (todo el SCSS anterior)
+
+// Variables para el footer
+$dev-text: rgba($olive-dark, 0.6); // Texto oliva sutil
+
+// Estilos del Footer WIP
+.dev-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px dashed rgba($olive-dark, 0.15); // Una línea divisoria sutil
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; // Espacio entre texto y logo
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: $dev-text;
+    letter-spacing: 0.5px;
+    margin: 0; // Reset margin for flex layout
+  }
+
+  .wip-signature-img {
+    max-width: 60px; // Tamaño pequeño para que no compita con la info principal
+    height: auto;
+    display: block;
+    // Efecto de integración: start con opacidad y grayscale
+    filter: grayscale(1) opacity(0.7); 
+    transition: all 0.4s ease;
+    cursor: pointer; // Indica que se puede cliquear
+
+    // Al hover, revelamos toda la estética vaporwave
+    &:hover {
+      filter: grayscale(0) opacity(1);
+      transform: scale(1.1); // Pequeño aumento de tamaño
+      // Sombra con color neón extraído de tu imagen (magenta/cian)
+      box-shadow: 0px 4px 15px rgba(#ff007f, 0.3); 
+    }
+  }
+}
+
+// ... (Todo tu SCSS anterior intacto)
+
+// Estilos del Footer WIP optimizados
+.dev-footer {
+  width: 100%;
+  margin-top: 4rem; // Le damos un poco más de aire para que respire el diseño
+  padding: 1.5rem 0;
+  border-top: 1px dashed rgba($olive-dark, 0.15);
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem; // Espaciado perfecto entre el texto y el logo
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: rgba($olive-dark, 0.6);
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  .wip-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none; // Evita cualquier subrayado extraño del navegador
+  }
+
+  .wip-signature-img {
+    max-width: 55px; // Un tamaño sutil y elegante
+    height: auto;
+    display: block;
+    border-radius: 4px; // Bordes levemente suavizados para la imagen
+    
+    // Filtro inicial: se acopla a la estética orgánica de la página (oliva/crema)
+    filter: grayscale(1) opacity(0.65); 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); // Transición suave de aceleración
+
+    // Al pasar el mouse o el dedo en el celular
+    &:hover, &:active {
+      filter: grayscale(0) opacity(1); // Revela el neón synthwave al 100%
+      transform: translateY(-3px) scale(1.08); // Pequeño salto hacia arriba y escalado dinámico
+      
+      // Sombra con la iluminación magenta/cian característica de tu imagen
+      filter: drop-shadow(0px 4px 12px rgba(#ff007f, 0.45)) drop-shadow(0px 2px 4px rgba(#00d2ff, 0.3));
+    }
+  }
+}
